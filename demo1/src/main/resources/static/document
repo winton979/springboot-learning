@@ -1,0 +1,2 @@
+# springboot默认访问resources/static文件夹作为静态文件，js/css等文件放在此处
+this is a test 文档
