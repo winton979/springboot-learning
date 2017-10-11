@@ -60,5 +60,32 @@ public class Demo2ApplicationTests {
 			System.out.println(u.toString());
 		}
 	}
+	
+	/**
+	 * 测试redis集中式缓存
+	 * @throws InterruptedException 
+	 */
+	@Test
+	public void testEhCache() throws InterruptedException {
+		System.out.println("------------------查询1--------------------");
+		List<User> all = userMapper.findById(1);
+		System.out.println(all.toString());
+		System.out.println("--------------------查询2----------------------------");
+		List<User> all2 = userMapper.findById(1);
+		System.out.println(all2.toString());
+		System.out.println("--------------------插入开始----------------------------");
+		userMapper.updateAgeById(0, 1);
+		System.out.println("--------------------插入结束----------------------------");
+		System.out.println("------------------查询3--------------------");
+		List<User> all3 = userMapper.findById(1);
+		System.out.println(all3.toString());
+		System.out.println("--------------------查询4----------------------------");
+		List<User> all4 = userMapper.findAll();
+		System.out.println(all4.toString());
+		
+		
+		
+		
+	}
 
 }
